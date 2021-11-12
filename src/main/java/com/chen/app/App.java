@@ -38,6 +38,17 @@ public class App {
         LbsUtil lbsUtil = new LbsUtil();
         //1.获取外接正方形
         Rectangle rectangle = lbsUtil.getRectangle(distance, userLng, userLat);
+
+        /**
+         *
+         *
+         * SELECT * FROM nearby_user
+         * WHERE 1=1
+         * AND (longitude BETWEEN #{minlng} AND #{maxlng})
+         * AND (latitude BETWEEN #{minlat} AND #{maxlat})
+         *
+         */
+
         //2.获取位置在正方形内的所有用户
 //        List<User> users = userMapper.selectUser(rectangle.getMinX(), rectangle.getMaxX(), rectangle.getMinY(), rectangle.getMaxY());
 //        //3.剔除半径超过指定距离的多余用户
